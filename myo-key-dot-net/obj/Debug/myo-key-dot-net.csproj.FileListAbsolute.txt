@@ -1,0 +1,18 @@
+d:\users\marc\documents\visual studio 2013\Projects\myo-key-dot-net\myo-key-dot-net\bin\Debug\myo-key-dot-net.exe.config
+d:\users\marc\documents\visual studio 2013\Projects\myo-key-dot-net\myo-key-dot-net\bin\Debug\myo-key-dot-net.exe
+d:\users\marc\documents\visual studio 2013\Projects\myo-key-dot-net\myo-key-dot-net\bin\Debug\myo-key-dot-net.pdb
+d:\users\marc\documents\visual studio 2013\Projects\myo-key-dot-net\myo-key-dot-net\obj\Debug\myo-key-dot-net.csprojResolveAssemblyReference.cache
+d:\users\marc\documents\visual studio 2013\Projects\myo-key-dot-net\myo-key-dot-net\obj\Debug\myo_key_dot_net.Properties.Resources.resources
+d:\users\marc\documents\visual studio 2013\Projects\myo-key-dot-net\myo-key-dot-net\obj\Debug\myo-key-dot-net.csproj.GenerateResource.Cache
+d:\users\marc\documents\visual studio 2013\Projects\myo-key-dot-net\myo-key-dot-net\obj\Debug\myo-key-dot-net.exe
+d:\users\marc\documents\visual studio 2013\Projects\myo-key-dot-net\myo-key-dot-net\obj\Debug\myo-key-dot-net.pdb
+d:\users\marc\documents\visual studio 2013\Projects\myo-key-dot-net\myo-key-dot-net\obj\Debug\myo_key_dot_net.mainForm.resources
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\bin\Debug\myo-key-dot-net.exe.config
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\obj\Debug\myo-key-dot-net.exe
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\obj\Debug\myo-key-dot-net.pdb
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\bin\Debug\myo-key-dot-net.exe
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\bin\Debug\myo-key-dot-net.pdb
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\obj\Debug\myo-key-dot-net.csprojResolveAssemblyReference.cache
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\obj\Debug\myo_key_dot_net.mainForm.resources
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\obj\Debug\myo_key_dot_net.Properties.Resources.resources
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\obj\Debug\myo-key-dot-net.csproj.GenerateResource.Cache
