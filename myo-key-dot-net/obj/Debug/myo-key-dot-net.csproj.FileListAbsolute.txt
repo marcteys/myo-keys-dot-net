@@ -16,3 +16,11 @@ D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\obj\Debug\myo-k
 D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\obj\Debug\myo_key_dot_net.mainForm.resources
 D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\obj\Debug\myo_key_dot_net.Properties.Resources.resources
 D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\obj\Debug\myo-key-dot-net.csproj.GenerateResource.Cache
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\bin\Debug\ble32.dll
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\bin\Debug\ble64.dll
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\bin\Debug\msvcp120.dll
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\bin\Debug\msvcr120.dll
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\bin\Debug\myo32.dll
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\bin\Debug\myo64.dll
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\bin\Debug\myo-dotnet.dll
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-key-dot-net\bin\Debug\myo-dotnet.pdb
