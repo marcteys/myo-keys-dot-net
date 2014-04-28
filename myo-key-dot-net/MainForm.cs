@@ -24,10 +24,8 @@ namespace myo_key_dot_net
         private Hub _hub;
         private Thalmic.Myo.Myo _myo;
         public ulong _mac;
-        
 
-        //key detection
-
+        /* to do : declare array (checkbox, etc) here */
 
         public MainForm()
         {
@@ -59,9 +57,15 @@ namespace myo_key_dot_net
                 // Debug.WriteLine(e.Pose.ToString());
 
 
+                /* To improve :
+                 * 
+                 * Create an enum with all the pose. When we click on a checkbox, we enable or disable the pose.
+                 * All the data (key, vibration) are stored in an object. 
+                 * This code just detect if the pose is enabled and then plays it
+                 * */
 
-                
                  var cb = GetAll(this, typeof(CheckBox));
+
 
                  foreach (CheckBox tmbcb in cb)
                  {
@@ -71,15 +75,16 @@ namespace myo_key_dot_net
                          var tb = GetAll(this, typeof(TextBox));
                          foreach (TextBox tmptb in tb)
                          {
+                             Debug.WriteLine(tmptb.Tag.ToString() + " " + e.Pose.ToString());
+
                              if (tmptb.Tag.ToString() == e.Pose.ToString())
                              {
                                  Debug.WriteLine(tmptb.Text);
 
-                                 SendKeys.SendWait("{" + tmptb.Text + "}");
+                                 //SendKeys.SendWait("{" + tmptb.Text + "}");
+                                 return;
                              }
-                             return;
                          }
-
                          return;
                      } 
                  }
@@ -96,14 +101,7 @@ namespace myo_key_dot_net
             }
         }
 
-        public IEnumerable<Control> GetAll(Control control, Type type)
-        {
-            var controls = control.Controls.Cast<Control>();
-
-            return controls.SelectMany(ctrl => GetAll(ctrl, type))
-                                      .Concat(controls)
-                                      .Where(c => c.GetType() == type);
-        }
+      
 
         private void test_Click(object sender, EventArgs e)
         {
@@ -188,7 +186,7 @@ namespace myo_key_dot_net
         {
 
         }
-
+        /*
         private void enablePose(object sender, EventArgs e)
         {
             foreach (Control x in this.Controls)
@@ -199,6 +197,23 @@ namespace myo_key_dot_net
                 }
             }
 
+        }
+        */
+        private void checkKeyValue(object sender, EventArgs e)
+        {
+            var tb = GetAll(this, typeof(TextBox));
+            CheckBox thiscb  = (CheckBox)sender;
+
+            foreach (TextBox tmptb in tb)
+            {
+                if (tmptb.Tag.ToString() == thiscb.Tag.ToString() && tmptb.Text == "type...")
+                {
+                    tmptb.Text = string.Empty;
+                    ActiveControl = tmptb;
+                    return;
+                }
+
+            }
         }
 
         private void assignKey(object sender, KeyPressEventArgs e)
@@ -219,14 +234,13 @@ namespace myo_key_dot_net
             thisTextBox.Text = string.Empty;
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        public IEnumerable<Control> GetAll(Control control, Type type)
         {
+            var controls = control.Controls.Cast<Control>();
 
-        }
-
-        private void comboBox10_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            return controls.SelectMany(ctrl => GetAll(ctrl, type))
+                                      .Concat(controls)
+                                      .Where(c => c.GetType() == type);
         }
 
     }

@@ -109,7 +109,6 @@
             this.groupBox1.Size = new System.Drawing.Size(259, 184);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // keyTwistIn
             // 
@@ -250,7 +249,6 @@
             this.vibrationFist.Size = new System.Drawing.Size(67, 21);
             this.vibrationFist.TabIndex = 18;
             this.vibrationFist.Tag = "Fist";
-            this.vibrationFist.SelectedIndexChanged += new System.EventHandler(this.comboBox10_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -297,6 +295,8 @@
             this.poseTwistIn.Tag = "TwistIn";
             this.poseTwistIn.Text = "Twist In";
             this.poseTwistIn.UseVisualStyleBackColor = true;
+            this.poseTwistIn.CheckedChanged += new System.EventHandler(this.checkKeyValue);
+
             // 
             // poseFingersSpread
             // 
@@ -308,6 +308,8 @@
             this.poseFingersSpread.Tag = "FingersSpread";
             this.poseFingersSpread.Text = "Fingers Spread";
             this.poseFingersSpread.UseVisualStyleBackColor = true;
+            this.poseFingersSpread.CheckedChanged += new System.EventHandler(this.checkKeyValue);
+
             // 
             // poseWaveOut
             // 
@@ -319,6 +321,8 @@
             this.poseWaveOut.Tag = "WaveOut";
             this.poseWaveOut.Text = "Wave Out";
             this.poseWaveOut.UseVisualStyleBackColor = true;
+            this.poseWaveOut.CheckedChanged += new System.EventHandler(this.checkKeyValue);
+
             // 
             // poseWaveIn
             // 
@@ -330,6 +334,8 @@
             this.poseWaveIn.Tag = "WaveIn";
             this.poseWaveIn.Text = "Wave in";
             this.poseWaveIn.UseVisualStyleBackColor = true;
+            this.poseWaveIn.CheckedChanged += new System.EventHandler(this.checkKeyValue);
+
             // 
             // poseFist
             // 
@@ -341,7 +347,7 @@
             this.poseFist.Tag = "Fist";
             this.poseFist.Text = "Fist";
             this.poseFist.UseVisualStyleBackColor = true;
-            this.poseFist.CheckedChanged += new System.EventHandler(this.enablePose);
+            this.poseFist.CheckedChanged += new System.EventHandler(this.checkKeyValue);
             // 
             // MainForm
             // 
