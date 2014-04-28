@@ -50,7 +50,7 @@
             this.poseWaveOut = new System.Windows.Forms.CheckBox();
             this.poseWaveIn = new System.Windows.Forms.CheckBox();
             this.poseFist = new System.Windows.Forms.CheckBox();
-            this.test = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -333,14 +333,17 @@
             this.poseFist.UseVisualStyleBackColor = true;
             this.poseFist.CheckedChanged += new System.EventHandler(this.checkKeyValue);
             // 
-            // test
+            // btnStart
             // 
-            this.test.Location = new System.Drawing.Point(81, 177);
-            this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(75, 23);
-            this.test.TabIndex = 1;
-            this.test.Text = "Start";
-            this.test.UseVisualStyleBackColor = true;
+            this.btnStart.Enabled = false;
+            this.btnStart.Location = new System.Drawing.Point(81, 177);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(75, 23);
+            this.btnStart.TabIndex = 1;
+            this.btnStart.Text = "Start";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.startSend);
+
             // 
             // MainForm
             // 
@@ -350,7 +353,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.logLabel);
             this.Controls.Add(this.btnConnect);
-            this.Controls.Add(this.test);
+            this.Controls.Add(this.btnStart);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Myo Keyboard";
@@ -384,7 +387,7 @@
         private System.Windows.Forms.TextBox keyFingersSpread;
         private System.Windows.Forms.TextBox keyWaveOut;
         private System.Windows.Forms.TextBox keyWaveIn;
-        private System.Windows.Forms.Button test;
+        private System.Windows.Forms.Button btnStart;
     }
 }
 

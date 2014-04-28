@@ -17,6 +17,15 @@ namespace myo_key_dot_net
 {
 
 
+
+    /* NEXT STUFF TO DO
+     * 
+     * Add the possibility of key combinaison (see e.KeyData)
+     * 
+     * 
+     * 
+     * 
+     * */
     public partial class MainForm : Form
     {
         //MYO stuff
@@ -25,6 +34,7 @@ namespace myo_key_dot_net
         private Thalmic.Myo.Myo _myo;
         public ulong _mac;
 
+        bool startSending = false;
         /* to do : declare array (checkbox, etc) here */
 
         public MainForm()
@@ -51,8 +61,10 @@ namespace myo_key_dot_net
             {
               
             }
-            else
+            else if (startSending)
             {
+
+            
                  // logStatus(e.Pose.ToString());
                 // Debug.WriteLine(e.Pose.ToString());
 
@@ -71,6 +83,7 @@ namespace myo_key_dot_net
                   * */
 
                  // Get all CheckBox in the scene (get checked state)
+
                  var cb = GetAll(this, typeof(CheckBox));
                  foreach (CheckBox tmbcb in cb)
                  {
@@ -133,6 +146,7 @@ namespace myo_key_dot_net
             {
                 this._hub = new Hub();
                 logStatus("Ready");
+                btnStart.Enabled = true;
             }
             catch { }
 
@@ -232,9 +246,30 @@ namespace myo_key_dot_net
             {
                 k = "CAPSLOCK";
             }
+            else if (k == "SPACE")
+            {
+                k = " ";
+            }
 
             return k;
 
+        }
+
+        private void startSend(object sender, EventArgs e)
+        {
+            if (startSending)
+            {
+                 btnStart.Text = "Start";
+                 startSending = false;
+                 logStatus("Stop sending keys.");
+            }
+            else
+            {
+                btnStart.Text = "Stop";
+                startSending = true;
+                logStatus("Start sending keys.");
+
+            }
         }
         public IEnumerable<Control> GetAll(Control control, Type type)
         {
