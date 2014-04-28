@@ -194,12 +194,12 @@ namespace myo_key_dot_net
             TextBox thisTextBox = (TextBox)sender;
             thisTextBox.ReadOnly = true;
             thisTextBox.Text = string.Empty;
-            string key = filterKey(e.KeyCode.ToString().ToUpper());
+            string key = filterKey(e.KeyCode.ToString());
 
 
             thisTextBox.Text = key;
             
-            logStatus("Set a new key : " +key);
+            logStatus("Set a new key : " +e.KeyCode.ToString());
         }
 
        
@@ -212,20 +212,28 @@ namespace myo_key_dot_net
 
         public string filterKey(string k)
         {
-            string finalKey = k;
-
-            if(k =="BACK") {
-                finalKey = "BACKSPACE";
+            if (k.Length > 1)
+            {
+                k = k.ToUpper();
+            }
+            else
+            {
+                k = k.ToLower();
+            }
+            if (k == "BACK")
+            {
+                k = "BACKSPACE";
             }
             else if (k == "RETURN")
             {
-                finalKey = "ENTER";
+                k = "ENTER";
             }
             else if (k == "CAPITAL")
             {
-                finalKey = "CAPSLOCK";
+                k = "CAPSLOCK";
             }
-            return finalKey;
+
+            return k;
 
         }
         public IEnumerable<Control> GetAll(Control control, Type type)

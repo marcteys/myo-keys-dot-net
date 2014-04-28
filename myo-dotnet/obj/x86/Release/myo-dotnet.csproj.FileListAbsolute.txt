@@ -20,3 +20,14 @@ D:\Users\Marc\Documents\Myo\Apps\Builds\myo-osc-dot-net\myo-dotnet\bin\Release\m
 D:\Users\Marc\Documents\Myo\Apps\Builds\myo-osc-dot-net\myo-dotnet\obj\x86\Release\myo-dotnet.csprojResolveAssemblyReference.cache
 D:\Users\Marc\Documents\Myo\Apps\Builds\myo-osc-dot-net\myo-dotnet\obj\x86\Release\myo-dotnet.dll
 D:\Users\Marc\Documents\Myo\Apps\Builds\myo-osc-dot-net\myo-dotnet\obj\x86\Release\myo-dotnet.pdb
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-dotnet\bin\Release\ble32.dll
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-dotnet\bin\Release\ble64.dll
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-dotnet\bin\Release\msvcp120.dll
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-dotnet\bin\Release\msvcr120.dll
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-dotnet\bin\Release\myo32.dll
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-dotnet\bin\Release\myo64.dll
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-dotnet\bin\Release\myo-dotnet.dll
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-dotnet\bin\Release\myo-dotnet.pdb
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-dotnet\obj\x86\Release\myo-dotnet.csprojResolveAssemblyReference.cache
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-dotnet\obj\x86\Release\myo-dotnet.dll
+D:\Users\Marc\Documents\Myo\Apps\myo-key-dot-net\myo-dotnet\obj\x86\Release\myo-dotnet.pdb
