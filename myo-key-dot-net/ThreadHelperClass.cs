@@ -21,39 +21,7 @@ namespace myo_key_dot_net
         /// <param name="form">The calling form</param>
         /// <param name="ctrl"></param>
         /// <param name="text"></param>
-        public static void setText(Form form, Control ctrl, string text)
-        {
-            // InvokeRequired required compares the thread ID of the 
-            // calling thread to the thread ID of the creating thread. 
-            // If these threads are different, it returns true. 
-            if (ctrl.InvokeRequired)
-            {
-                SetTextCallback d = new SetTextCallback(setText);
-                form.BeginInvoke(d, new object[] { form, ctrl, text });
-            }
-            else
-            {
-                ctrl.Text = text;
-            }
-        }
-
-        public static void sendOsc(Form form, Control ctrl, string text)
-        {
-            // InvokeRequired required compares the thread ID of the 
-            // calling thread to the thread ID of the creating thread. 
-            // If these threads are different, it returns true. 
-            if (ctrl.InvokeRequired)
-            {
-                SetTextCallback d = new SetTextCallback(sendOsc);
-                form.BeginInvoke(d, new object[] { form, ctrl, text });
-
-            }
-            else
-            {
-                ctrl.Text = ctrl.Text + text;
-            }
-        }
-
+      
         public static void appendText(Form form, Control ctrl, string text)
         {
             // InvokeRequired required compares the thread ID of the 

@@ -57,7 +57,7 @@
             // logLabel
             // 
             this.logLabel.AutoSize = true;
-            this.logLabel.Location = new System.Drawing.Point(12, 239);
+            this.logLabel.Location = new System.Drawing.Point(9, 204);
             this.logLabel.Name = "logLabel";
             this.logLabel.Size = new System.Drawing.Size(56, 13);
             this.logLabel.TabIndex = 1;
@@ -66,10 +66,10 @@
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(161, 202);
+            this.btnConnect.Location = new System.Drawing.Point(162, 177);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(110, 23);
-            this.btnConnect.TabIndex = 2;
+            this.btnConnect.TabIndex = 0;
             this.btnConnect.Text = "Connect Myo";
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
@@ -96,7 +96,7 @@
             this.groupBox1.Controls.Add(this.poseFist);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(259, 184);
+            this.groupBox1.Size = new System.Drawing.Size(259, 159);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
@@ -110,7 +110,7 @@
             this.keyTwistIn.Tag = "TwistIn";
             this.keyTwistIn.Text = "type...";
             this.keyTwistIn.Click += new System.EventHandler(this.textBox_Clear);
-            this.keyTwistIn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.assignKey);
+            this.keyTwistIn.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.assignKey);
             // 
             // keyFingersSpread
             // 
@@ -122,7 +122,7 @@
             this.keyFingersSpread.Tag = "FingersSpread";
             this.keyFingersSpread.Text = "type...";
             this.keyFingersSpread.Click += new System.EventHandler(this.textBox_Clear);
-            this.keyFingersSpread.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.assignKey);
+            this.keyFingersSpread.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.assignKey);
             // 
             // keyWaveOut
             // 
@@ -134,7 +134,7 @@
             this.keyWaveOut.Tag = "WaveOut";
             this.keyWaveOut.Text = "type...";
             this.keyWaveOut.Click += new System.EventHandler(this.textBox_Clear);
-            this.keyWaveOut.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.assignKey);
+            this.keyWaveOut.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.assignKey);
             // 
             // keyWaveIn
             // 
@@ -146,7 +146,7 @@
             this.keyWaveIn.Tag = "WaveIn";
             this.keyWaveIn.Text = "type...";
             this.keyWaveIn.Click += new System.EventHandler(this.textBox_Clear);
-            this.keyWaveIn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.assignKey);
+            this.keyWaveIn.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.assignKey);
             // 
             // keyFist
             // 
@@ -158,7 +158,7 @@
             this.keyFist.Tag = "Fist";
             this.keyFist.Text = "type...";
             this.keyFist.Click += new System.EventHandler(this.textBox_Clear);
-            this.keyFist.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.assignKey);
+            this.keyFist.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.assignKey);
             // 
             // vibrationTwistIn
             // 
@@ -239,7 +239,6 @@
             this.vibrationFist.Size = new System.Drawing.Size(67, 21);
             this.vibrationFist.TabIndex = 18;
             this.vibrationFist.Tag = "Fist";
-
             // 
             // label3
             // 
@@ -336,10 +335,10 @@
             // 
             // test
             // 
-            this.test.Location = new System.Drawing.Point(80, 202);
+            this.test.Location = new System.Drawing.Point(81, 177);
             this.test.Name = "test";
             this.test.Size = new System.Drawing.Size(75, 23);
-            this.test.TabIndex = 0;
+            this.test.TabIndex = 1;
             this.test.Text = "Start";
             this.test.UseVisualStyleBackColor = true;
             // 
@@ -347,7 +346,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 226);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.logLabel);
             this.Controls.Add(this.btnConnect);

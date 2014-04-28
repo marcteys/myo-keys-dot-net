@@ -53,7 +53,7 @@ namespace myo_key_dot_net
             }
             else
             {
-                 logStatus(e.Pose.ToString());
+                 // logStatus(e.Pose.ToString());
                 // Debug.WriteLine(e.Pose.ToString());
 
 
@@ -187,26 +187,47 @@ namespace myo_key_dot_net
             }
         }
 
-        private void assignKey(object sender, KeyPressEventArgs e)
+        private void assignKey(object sender, PreviewKeyDownEventArgs e)
         {
-            Keys k = (Keys)char.ToUpper(e.KeyChar);
+
+            
             TextBox thisTextBox = (TextBox)sender;
-
-
-
             thisTextBox.ReadOnly = true;
             thisTextBox.Text = string.Empty;
-            thisTextBox.Text = k.ToString();
+            string key = filterKey(e.KeyCode.ToString().ToUpper());
 
-            logStatus(k.ToString());
+
+            thisTextBox.Text = key;
+            
+            logStatus("Set a new key : " +key);
         }
 
+       
+     
         private void textBox_Clear(object sender, EventArgs e)
         {
             TextBox thisTextBox = (TextBox)sender;
             thisTextBox.Text = string.Empty;
         }
 
+        public string filterKey(string k)
+        {
+            string finalKey = k;
+
+            if(k =="BACK") {
+                finalKey = "BACKSPACE";
+            }
+            else if (k == "RETURN")
+            {
+                finalKey = "ENTER";
+            }
+            else if (k == "CAPITAL")
+            {
+                finalKey = "CAPSLOCK";
+            }
+            return finalKey;
+
+        }
         public IEnumerable<Control> GetAll(Control control, Type type)
         {
             var controls = control.Controls.Cast<Control>();
