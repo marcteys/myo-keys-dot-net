@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.test = new System.Windows.Forms.Button();
             this.logLabel = new System.Windows.Forms.Label();
             this.btnConnect = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -51,18 +50,9 @@
             this.poseWaveOut = new System.Windows.Forms.CheckBox();
             this.poseWaveIn = new System.Windows.Forms.CheckBox();
             this.poseFist = new System.Windows.Forms.CheckBox();
+            this.test = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // test
-            // 
-            this.test.Location = new System.Drawing.Point(80, 202);
-            this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(75, 23);
-            this.test.TabIndex = 0;
-            this.test.Text = "Start";
-            this.test.UseVisualStyleBackColor = true;
-            this.test.Click += new System.EventHandler(this.test_Click);
             // 
             // logLabel
             // 
@@ -271,7 +261,6 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Keys";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -283,7 +272,6 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Pose list";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // poseTwistIn
             // 
@@ -296,7 +284,6 @@
             this.poseTwistIn.Text = "Twist In";
             this.poseTwistIn.UseVisualStyleBackColor = true;
             this.poseTwistIn.CheckedChanged += new System.EventHandler(this.checkKeyValue);
-
             // 
             // poseFingersSpread
             // 
@@ -309,7 +296,6 @@
             this.poseFingersSpread.Text = "Fingers Spread";
             this.poseFingersSpread.UseVisualStyleBackColor = true;
             this.poseFingersSpread.CheckedChanged += new System.EventHandler(this.checkKeyValue);
-
             // 
             // poseWaveOut
             // 
@@ -322,7 +308,6 @@
             this.poseWaveOut.Text = "Wave Out";
             this.poseWaveOut.UseVisualStyleBackColor = true;
             this.poseWaveOut.CheckedChanged += new System.EventHandler(this.checkKeyValue);
-
             // 
             // poseWaveIn
             // 
@@ -335,7 +320,6 @@
             this.poseWaveIn.Text = "Wave in";
             this.poseWaveIn.UseVisualStyleBackColor = true;
             this.poseWaveIn.CheckedChanged += new System.EventHandler(this.checkKeyValue);
-
             // 
             // poseFist
             // 
@@ -348,6 +332,15 @@
             this.poseFist.Text = "Fist";
             this.poseFist.UseVisualStyleBackColor = true;
             this.poseFist.CheckedChanged += new System.EventHandler(this.checkKeyValue);
+            // 
+            // test
+            // 
+            this.test.Location = new System.Drawing.Point(80, 202);
+            this.test.Name = "test";
+            this.test.Size = new System.Drawing.Size(75, 23);
+            this.test.TabIndex = 0;
+            this.test.Text = "Start";
+            this.test.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -370,7 +363,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button test;
         private System.Windows.Forms.Label logLabel;
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -392,6 +384,7 @@
         private System.Windows.Forms.TextBox keyFingersSpread;
         private System.Windows.Forms.TextBox keyWaveOut;
         private System.Windows.Forms.TextBox keyWaveIn;
+        private System.Windows.Forms.Button test;
     }
 }
 

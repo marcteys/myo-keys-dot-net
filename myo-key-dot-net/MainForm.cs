@@ -57,14 +57,20 @@ namespace myo_key_dot_net
                 // Debug.WriteLine(e.Pose.ToString());
 
 
-                /* To improve :
-                 * 
-                 * Create an enum with all the pose. When we click on a checkbox, we enable or disable the pose.
-                 * All the data (key, vibration) are stored in an object. 
-                 * This code just detect if the pose is enabled and then plays it
-                 * */
+                 /* To improve :
+                  * 
+                  * Create an enum with all the pose. When we click on a checkbox, we enable or disable the pose.
+                  * All the data (key, vibration) are stored in an object. 
+                  * This code just detect if the pose is enabled and then plays it
+                  * All the variables are stored in the ENUMs. Verify proprely like this method
+                  * //if (e.Pose == Pose.FingersSpread)
+                  *     {
+                  *    this._myo.Vibrate(VibrationType.Medium);
+                  *  }
+                  * 
+                  * */
 
-                // Get all CheckBox in the scene (get checked state)
+                 // Get all CheckBox in the scene (get checked state)
                  var cb = GetAll(this, typeof(CheckBox));
                  foreach (CheckBox tmbcb in cb)
                  {
@@ -79,7 +85,6 @@ namespace myo_key_dot_net
                              {
                                  string t = "{" + tmptb.Text + "}";
                                  Debug.WriteLine(t);
-                                 //SendKeys.SendWait("{" + tmptb.Text + "}");
                                  SendKeys.SendWait(t);
 
                                  //Get all Combo box in the scene (get vibration type)
@@ -98,28 +103,14 @@ namespace myo_key_dot_net
                          return;
                      } 
                  }
-               
 
-                
-
-                 //  SendKeys.SendWait("{RETURN}");
-
-                //if (e.Pose == Pose.FingersSpread)
-                // {
-                //    this._myo.Vibrate(VibrationType.Medium);
-                //  }
+              
             }
         }
 
       
 
-        private void test_Click(object sender, EventArgs e)
-        {
-
-         //   logStatus("lol");
-
-        }
-
+      
         private void logStatus(string message)
         {
 
@@ -177,38 +168,7 @@ namespace myo_key_dot_net
             }
         }
 
-        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
 
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-        /*
-        private void enablePose(object sender, EventArgs e)
-        {
-            foreach (Control x in this.Controls)
-            {
-                if (x is TextBox)
-                {
-                    ((TextBox)x).Text = String.Empty;
-                }
-            }
-
-        }
-        */
         private void checkKeyValue(object sender, EventArgs e)
         {
             var tb = GetAll(this, typeof(TextBox));
