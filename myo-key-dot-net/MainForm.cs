@@ -64,24 +64,34 @@ namespace myo_key_dot_net
                  * This code just detect if the pose is enabled and then plays it
                  * */
 
+                // Get all CheckBox in the scene (get checked state)
                  var cb = GetAll(this, typeof(CheckBox));
-
-
                  foreach (CheckBox tmbcb in cb)
                  {
                      if (tmbcb.Checked && tmbcb.Tag.ToString() == e.Pose.ToString())
                      {
 
+                         //Get all TextBox in the scene (get the key)
                          var tb = GetAll(this, typeof(TextBox));
                          foreach (TextBox tmptb in tb)
                          {
-                             Debug.WriteLine(tmptb.Tag.ToString() + " " + e.Pose.ToString());
-
                              if (tmptb.Tag.ToString() == e.Pose.ToString())
                              {
-                                 Debug.WriteLine(tmptb.Text);
-
+                                 string t = "{" + tmptb.Text + "}";
+                                 Debug.WriteLine(t);
                                  //SendKeys.SendWait("{" + tmptb.Text + "}");
+                                 SendKeys.SendWait(t);
+
+                                 //Get all Combo box in the scene (get vibration type)
+                                 var combo = GetAll(this, typeof(ComboBox));
+                                 foreach (ComboBox tmpcombo in combo)
+                                 {
+                                     if (tmpcombo.Tag.ToString() == e.Pose.ToString())
+                                     {
+
+                                         return;
+                                     }
+                                 }
                                  return;
                              }
                          }
@@ -220,6 +230,8 @@ namespace myo_key_dot_net
         {
             Keys k = (Keys)char.ToUpper(e.KeyChar);
             TextBox thisTextBox = (TextBox)sender;
+
+
 
             thisTextBox.ReadOnly = true;
             thisTextBox.Text = string.Empty;
