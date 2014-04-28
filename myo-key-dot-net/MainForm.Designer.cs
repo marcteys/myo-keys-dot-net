@@ -239,6 +239,7 @@
             this.vibrationFist.Size = new System.Drawing.Size(67, 21);
             this.vibrationFist.TabIndex = 18;
             this.vibrationFist.Tag = "Fist";
+
             // 
             // label3
             // 

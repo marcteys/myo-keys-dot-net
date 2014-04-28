@@ -84,6 +84,8 @@ namespace myo_key_dot_net
                              if (tmptb.Tag.ToString() == e.Pose.ToString())
                              {
                                  string t = "{" + tmptb.Text + "}";
+                                 if (tmptb.Text == string.Empty) t = "{ENTER}";
+
                                  Debug.WriteLine(t);
                                  SendKeys.SendWait(t);
 
@@ -93,7 +95,8 @@ namespace myo_key_dot_net
                                  {
                                      if (tmpcombo.Tag.ToString() == e.Pose.ToString())
                                      {
-
+                                        //!\ Threading problems !
+                                       //  Debug.WriteLine(tmpcombo.SelectedIndex);
                                          return;
                                      }
                                  }
@@ -113,8 +116,7 @@ namespace myo_key_dot_net
       
         private void logStatus(string message)
         {
-
-          //  logLabel.Text = message;
+            ThreadHelperClass.appendText(this, this.logLabel, message + " ");
         }
 
         private void connect_Click(object sender, EventArgs e)
@@ -182,7 +184,6 @@ namespace myo_key_dot_net
                     ActiveControl = tmptb;
                     return;
                 }
-
             }
         }
 
