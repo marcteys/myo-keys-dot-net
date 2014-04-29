@@ -22,7 +22,7 @@ namespace myo_key_dot_net
      * 
      * Add the possibility of key combinaison (see e.KeyData)
      * 
-     * 
+     * Create a "validation gesture" to do before
      * 
      * 
      * */
@@ -278,6 +278,11 @@ namespace myo_key_dot_net
             return controls.SelectMany(ctrl => GetAll(ctrl, type))
                                       .Concat(controls)
                                       .Where(c => c.GetType() == type);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
     }
