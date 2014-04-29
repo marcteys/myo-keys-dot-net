@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace myo_key_dot_net
+namespace myo_keys_dot_net
 {
     static class Program
     {

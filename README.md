@@ -31,3 +31,4 @@ For this project I had to add a new VibrationType (None) to the *enum* of the my
 * Find a new method to deteck multiple keys shortcuts, case, etc...
 * Complete the readme
 * Best practices / functions to optimize the come
+* Disable the vibration field at the begenning and enable it later. (or set default to none)

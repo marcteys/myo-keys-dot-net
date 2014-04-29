@@ -8,23 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
-using System.Threading;
 
 //MYO
 using Thalmic.Myo;
 
 
-namespace myo_key_dot_net
+namespace myo_keys_dot_net
 {
-
-
 
     /* NEXT STUFF TO DO
      * 
      * Add the possibility of key combinaison (see e.KeyData)
      * Use Input simulator ? http://inputsimulator.codeplex.com/
-     * 
-     * 
      * 
      * */
     public partial class MainForm : Form
@@ -39,12 +34,11 @@ namespace myo_key_dot_net
         bool validationGesture = false;
         int validationVal = 0;
 
-        /* to do : declare array (checkbox, etc) here */
+        /* to do : declare array (checkbox, etc) here [ GetAll(this, typeof(CheckBox)); ] */
 
         public MainForm()
         {
             InitializeComponent();
-
         }
 
         private void hub_MyoPaired(object sender, MyoEventArgs e)
@@ -55,8 +49,6 @@ namespace myo_key_dot_net
                 this._mac = e.Myo.MacAddress;
                 this._myo.PoseChange += new EventHandler<PoseEventArgs>(this.myo_PoseChanged);
                 this._myo.Vibrate(VibrationType.Short);
- 
-
             }
         }
 
@@ -71,13 +63,11 @@ namespace myo_key_dot_net
             else
             {
                 //If the validation is not set AND the validation gesture is not "None" AND the validationVal equals the current pose
-                if(!validationGesture && (Thalmic.Myo.Pose)validationVal != 0 && (Thalmic.Myo.Pose)validationVal == e.Pose)
+                if (!validationGesture && (Thalmic.Myo.Pose)validationVal != 0 && (Thalmic.Myo.Pose)validationVal == e.Pose && startSending)
                 {
-               
                      validationGesture = true;
                      logStatus("Validation gesture detected (" + e.Pose + "), ready to send key.");
                      return;
-                    Debug.WriteLine("faaaalse");
                 }
 
                 //if the validation gesture is set OR the validation pose is None
@@ -142,10 +132,7 @@ namespace myo_key_dot_net
                                              //use invoke to read the comboBox value
                                            this.Invoke(new MethodInvoker(delegate() { val = tmpcombo.SelectedIndex; }));
                                            this._myo.Vibrate((VibrationType)val);
-
-
-
-                                            return;
+                                           return;
                                          }
                                      }
                                      return;
@@ -155,7 +142,7 @@ namespace myo_key_dot_net
                          } 
                      }
                 }
-                else if (!validationGesture)
+                else if (!validationGesture && startSending)
                 {
                     logStatus("Do the validation gesture first. (Detected " + e.Pose + ")");
                 }
@@ -214,7 +201,7 @@ namespace myo_key_dot_net
                 {
                     this._hub.PairWithAnyMyo();
                 }
-                logStatus("Myo device found");
+                logStatus("Myo device connected. Ready to send keys.");
             }
             else
             {
@@ -237,6 +224,8 @@ namespace myo_key_dot_net
                     return;
                 }
             }
+
+
         }
 
         private void assignKey(object sender, PreviewKeyDownEventArgs e)
@@ -246,10 +235,7 @@ namespace myo_key_dot_net
             thisTextBox.ReadOnly = true;
             thisTextBox.Text = string.Empty;
             string key = filterKey(e.KeyCode.ToString());
-
-
             thisTextBox.Text = key;
-            
             logStatus("Set a new key : " +e.KeyCode.ToString());
         }
 
@@ -294,7 +280,6 @@ namespace myo_key_dot_net
 
         private void startSend(object sender, EventArgs e)
         {
-
             if (startSending)
             {
                  btnStart.Text = "Start";
@@ -306,7 +291,6 @@ namespace myo_key_dot_net
                 btnStart.Text = "Stop";
                 startSending = true;
                 logStatus("Start sending keys.");
-
             }
         }
         public IEnumerable<Control> GetAll(Control control, Type type)

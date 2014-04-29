@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("myo-key-dot-net")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("myo-keys-dot-net")]
+[assembly: AssemblyDescription("Use the myo gestures to simulate keys")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("myo-key-dot-net")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCompany("Thalmic Labs")]
+[assembly: AssemblyProduct("myo-keys-dot-net")]
+[assembly: AssemblyCopyright("Copyright Marc Teyssier & Thalmic Labs © 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

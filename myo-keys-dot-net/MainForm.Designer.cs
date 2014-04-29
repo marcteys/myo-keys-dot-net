@@ -1,4 +1,4 @@
-﻿namespace myo_key_dot_net
+﻿namespace myo_keys_dot_net
 {
     partial class MainForm
     {
@@ -174,6 +174,7 @@
             this.vibrationTwistIn.Size = new System.Drawing.Size(67, 21);
             this.vibrationTwistIn.TabIndex = 22;
             this.vibrationTwistIn.Tag = "TwistIn";
+            //this.vibrationTwistIn.Enabled = false;
             this.vibrationTwistIn.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
 
             // 
@@ -187,6 +188,7 @@
             this.vibrationFingersSpread.Size = new System.Drawing.Size(67, 21);
             this.vibrationFingersSpread.TabIndex = 21;
             this.vibrationFingersSpread.Tag = "FingersSpread";
+            //this.vibrationFingersSpread.Enabled = false;
             this.vibrationFingersSpread.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
 
             // 
@@ -200,6 +202,7 @@
             this.vibrationWaveOut.Size = new System.Drawing.Size(67, 21);
             this.vibrationWaveOut.TabIndex = 20;
             this.vibrationWaveOut.Tag = "WaveOut";
+            //this.vibrationWaveOut.Enabled = false;
             this.vibrationWaveOut.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
 
             // 
@@ -213,6 +216,7 @@
             this.vibrationWaveIn.Size = new System.Drawing.Size(67, 21);
             this.vibrationWaveIn.TabIndex = 19;
             this.vibrationWaveIn.Tag = "WaveIn";
+            //this.vibrationWaveIn.Enabled = false;
             this.vibrationWaveIn.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
 
             // 
@@ -226,6 +230,7 @@
             this.vibrationFist.Size = new System.Drawing.Size(67, 21);
             this.vibrationFist.TabIndex = 18;
             this.vibrationFist.Tag = "Fist";
+            //this.vibrationFist.Enabled = false;
             this.vibrationFist.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
 
             // 
@@ -352,7 +357,7 @@
             this.validatioGestureBox.Name = "validatioGestureBox";
             this.validatioGestureBox.Size = new System.Drawing.Size(140, 21);
             this.validatioGestureBox.TabIndex = 27;
-            this.validatioGestureBox.Tag = "TwistIn";
+            //this.validatioGestureBox.Tag = "TwistIn";
             this.validatioGestureBox.SelectedIndexChanged += new System.EventHandler(this.validatioGestureBox_SelectedIndexChanged);
             // 
             // MainForm
@@ -366,7 +371,8 @@
             this.Controls.Add(this.btnStart);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "Myo Keyboard";
+            this.Text = "Myo Keys";
+            this.MaximumSize = this.MinimumSize = this.Size;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

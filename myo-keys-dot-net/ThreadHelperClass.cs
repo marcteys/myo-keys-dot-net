@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading.Tasks;
 
-namespace myo_key_dot_net
+namespace myo_keys_dot_net
 {
     // Source: http://stackoverflow.com/questions/10775367/cross-thread-operation-not-valid-control-textbox1-accessed-from-a-thread-othe
 

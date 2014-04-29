@@ -7,8 +7,8 @@
     <ProjectGuid>{6C38EF51-A591-458E-BC9E-931108E29DB4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>myo_key_dot_net</RootNamespace>
-    <AssemblyName>myo-key-dot-net</AssemblyName>
+    <RootNamespace>myo_keys_dot_net</RootNamespace>
+    <AssemblyName>myo-keys-dot-net</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -34,6 +34,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>thalmic-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>myo_keys_dot_net.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
