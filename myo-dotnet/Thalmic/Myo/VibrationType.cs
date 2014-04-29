@@ -6,7 +6,8 @@
     {
         Short,
         Medium,
-        Long
+        Long,
+        None
     }
 }
 

@@ -59,16 +59,16 @@
             // logLabel
             // 
             this.logLabel.AutoSize = true;
-            this.logLabel.Location = new System.Drawing.Point(9, 242);
+            this.logLabel.Location = new System.Drawing.Point(7, 226);
             this.logLabel.Name = "logLabel";
-            this.logLabel.Size = new System.Drawing.Size(56, 13);
+            this.logLabel.Size = new System.Drawing.Size(95, 13);
             this.logLabel.TabIndex = 1;
-            this.logLabel.Text = "Log status";
+            this.logLabel.Text = "Ready to connect.";
             this.logLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(162, 215);
+            this.btnConnect.Location = new System.Drawing.Point(161, 202);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(110, 23);
             this.btnConnect.TabIndex = 0;
@@ -78,6 +78,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.keyTwistIn);
             this.groupBox1.Controls.Add(this.keyFingersSpread);
             this.groupBox1.Controls.Add(this.keyWaveOut);
@@ -98,7 +100,7 @@
             this.groupBox1.Controls.Add(this.poseFist);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(259, 159);
+            this.groupBox1.Size = new System.Drawing.Size(259, 184);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
@@ -167,60 +169,65 @@
             this.vibrationTwistIn.Cursor = System.Windows.Forms.Cursors.Default;
             this.vibrationTwistIn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.vibrationTwistIn.FormattingEnabled = true;
-            this.vibrationTwistIn.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
             this.vibrationTwistIn.Location = new System.Drawing.Point(186, 129);
             this.vibrationTwistIn.Name = "vibrationTwistIn";
             this.vibrationTwistIn.Size = new System.Drawing.Size(67, 21);
             this.vibrationTwistIn.TabIndex = 22;
             this.vibrationTwistIn.Tag = "TwistIn";
+            this.vibrationTwistIn.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
+
             // 
             // vibrationFingersSpread
             // 
             this.vibrationFingersSpread.Cursor = System.Windows.Forms.Cursors.Default;
             this.vibrationFingersSpread.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.vibrationFingersSpread.FormattingEnabled = true;
-            this.vibrationFingersSpread.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
             this.vibrationFingersSpread.Location = new System.Drawing.Point(186, 102);
             this.vibrationFingersSpread.Name = "vibrationFingersSpread";
             this.vibrationFingersSpread.Size = new System.Drawing.Size(67, 21);
             this.vibrationFingersSpread.TabIndex = 21;
             this.vibrationFingersSpread.Tag = "FingersSpread";
+            this.vibrationFingersSpread.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
+
             // 
             // vibrationWaveOut
             // 
             this.vibrationWaveOut.Cursor = System.Windows.Forms.Cursors.Default;
             this.vibrationWaveOut.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.vibrationWaveOut.FormattingEnabled = true;
-            this.vibrationWaveOut.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
             this.vibrationWaveOut.Location = new System.Drawing.Point(186, 75);
             this.vibrationWaveOut.Name = "vibrationWaveOut";
             this.vibrationWaveOut.Size = new System.Drawing.Size(67, 21);
             this.vibrationWaveOut.TabIndex = 20;
             this.vibrationWaveOut.Tag = "WaveOut";
+            this.vibrationWaveOut.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
+
             // 
             // vibrationWaveIn
             // 
             this.vibrationWaveIn.Cursor = System.Windows.Forms.Cursors.Default;
             this.vibrationWaveIn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.vibrationWaveIn.FormattingEnabled = true;
-            this.vibrationWaveIn.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
             this.vibrationWaveIn.Location = new System.Drawing.Point(186, 48);
             this.vibrationWaveIn.Name = "vibrationWaveIn";
             this.vibrationWaveIn.Size = new System.Drawing.Size(67, 21);
             this.vibrationWaveIn.TabIndex = 19;
             this.vibrationWaveIn.Tag = "WaveIn";
+            this.vibrationWaveIn.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
+
             // 
             // vibrationFist
             // 
             this.vibrationFist.Cursor = System.Windows.Forms.Cursors.Default;
             this.vibrationFist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.vibrationFist.FormattingEnabled = true;
-            this.vibrationFist.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
             this.vibrationFist.Location = new System.Drawing.Point(186, 21);
             this.vibrationFist.Name = "vibrationFist";
             this.vibrationFist.Size = new System.Drawing.Size(67, 21);
             this.vibrationFist.TabIndex = 18;
             this.vibrationFist.Tag = "Fist";
+            this.vibrationFist.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
+
             // 
             // label3
             // 
@@ -318,7 +325,7 @@
             // btnStart
             // 
             this.btnStart.Enabled = false;
-            this.btnStart.Location = new System.Drawing.Point(81, 215);
+            this.btnStart.Location = new System.Drawing.Point(80, 202);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
             this.btnStart.TabIndex = 1;
@@ -329,7 +336,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 184);
+            this.label4.Location = new System.Drawing.Point(6, 161);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 13);
             this.label4.TabIndex = 7;
@@ -338,10 +345,10 @@
             // comboBox1
             // 
             this.comboBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.comboBox1.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.Pose));
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.Pose));
-            this.comboBox1.Location = new System.Drawing.Point(125, 180);
+            this.comboBox1.Location = new System.Drawing.Point(113, 156);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(140, 21);
             this.comboBox1.TabIndex = 27;
@@ -352,9 +359,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 260);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(284, 245);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.logLabel);
             this.Controls.Add(this.btnConnect);
