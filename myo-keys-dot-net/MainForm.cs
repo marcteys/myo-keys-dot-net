@@ -81,7 +81,7 @@ namespace myo_key_dot_net
                 }
 
                 //if the validation gesture is set OR the validation pose is None
-                if(validationGesture || (Thalmic.Myo.Pose)validationVal == 0)
+                if(validationGesture || (Thalmic.Myo.Pose)validationVal == 0 && startSending)
                 {
 
                      // Detect the pose for the first time there is a validation gesture
