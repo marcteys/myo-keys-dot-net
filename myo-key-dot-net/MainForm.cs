@@ -112,6 +112,9 @@ namespace myo_key_dot_net
 
                                  Debug.WriteLine(t);
                                  SendKeys.SendWait(t);
+                                 this.Invoke(new MethodInvoker(delegate() {
+                                     SendKeys.SendWait(t);
+                                 }));
 
                                  logStatus("Pose detected : " + e.Pose.ToString() + " | Send key : " + tmptb.Text);
 
