@@ -4,10 +4,10 @@
 
     public enum VibrationType
     {
-        None,
         Short,
         Medium,
         Long,
+        None
     }
 }
 

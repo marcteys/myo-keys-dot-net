@@ -50,7 +50,7 @@ namespace myo_key_dot_net
                 this._myo = e.Myo;
                 this._mac = e.Myo.MacAddress;
                 this._myo.PoseChange += new EventHandler<PoseEventArgs>(this.myo_PoseChanged);
-                this._myo.Vibrate(VibrationType.Medium);
+                this._myo.Vibrate(VibrationType.Short);
             }
         }
 
@@ -109,7 +109,10 @@ namespace myo_key_dot_net
                                      if (tmpcombo.Tag.ToString() == e.Pose.ToString())
                                      {
                                         //!\ Threading problems !
-                                       //  Debug.WriteLine(tmpcombo.SelectedIndex);
+                                       var val = (int)3;
+                                       this.Invoke(new MethodInvoker(delegate() { val = tmpcombo.SelectedIndex; }));
+                                       this._myo.Vibrate((VibrationType)val);
+
                                          return;
                                      }
                                  }
