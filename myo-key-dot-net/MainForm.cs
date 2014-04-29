@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Threading;
 
 //MYO
 using Thalmic.Myo;
@@ -53,12 +54,16 @@ namespace myo_key_dot_net
                 this._mac = e.Myo.MacAddress;
                 this._myo.PoseChange += new EventHandler<PoseEventArgs>(this.myo_PoseChanged);
                 this._myo.Vibrate(VibrationType.Short);
+ 
+
             }
         }
 
 
         private void myo_PoseChanged(object sender, PoseEventArgs e)
         {
+
+
             if (e.Pose == Pose.None)
             {
               
@@ -110,14 +115,20 @@ namespace myo_key_dot_net
                                  string t = "{" + tmptb.Text + "}";
                                  if (tmptb.Text == string.Empty) t = "{ENTER}";
 
-                                 Debug.WriteLine(t);
-                                 SendKeys.SendWait(t);
-                                 this.Invoke(new MethodInvoker(delegate() {
-                                     SendKeys.SendWait(t);
-                                 }));
 
+                                 Debug.WriteLine(t);
+                                 //SendKeys.Send(t);
+
+                                 SendKeys.SendWait(t);
+                                 Thread.Sleep(500);
                                  logStatus("Pose detected : " + e.Pose.ToString() + " | Send key : " + tmptb.Text);
 
+                                 /*
+                                 this.Invoke(new MethodInvoker(delegate() {
+                                     SendKeys.Send(t);
+                                     logStatus("Pose detected : " + e.Pose.ToString() + " | Send key : " + tmptb.Text);
+                                 }));
+                                 */
                                  //Get all Combo box in the scene (get vibration type)
                                  var combo = GetAll(this, typeof(ComboBox));
                                  foreach (ComboBox tmpcombo in combo)
@@ -186,7 +197,7 @@ namespace myo_key_dot_net
             }
             catch (InvalidOperationException)
             {
-                MessageBox.Show("Please ensure the dongle is connected and not in use by another application. If you continue to receive this message, unplug the dongle and plug it back in.", "Unable to connect to Bluetooth dongle");
+                //MessageBox.Show("Please ensure the dongle is connected and not in use by another application. If you continue to receive this message, unplug the dongle and plug it back in.", "Unable to connect to Bluetooth dongle");
             }
 
             if (this._hub != null)
@@ -227,7 +238,6 @@ namespace myo_key_dot_net
         private void assignKey(object sender, PreviewKeyDownEventArgs e)
         {
 
-            
             TextBox thisTextBox = (TextBox)sender;
             thisTextBox.ReadOnly = true;
             thisTextBox.Text = string.Empty;
@@ -280,6 +290,7 @@ namespace myo_key_dot_net
 
         private void startSend(object sender, EventArgs e)
         {
+
             if (startSending)
             {
                  btnStart.Text = "Start";
