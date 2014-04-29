@@ -35,6 +35,8 @@ namespace myo_key_dot_net
         public ulong _mac;
 
         bool startSending = false;
+        bool validationGesture = false;
+
         /* to do : declare array (checkbox, etc) here */
 
         public MainForm()
@@ -64,11 +66,17 @@ namespace myo_key_dot_net
             else if (startSending)
             {
 
-            
-                 // logStatus(e.Pose.ToString());
-                // Debug.WriteLine(e.Pose.ToString());
+                // Detect the pose for the first time there is a validation gesture
+                //Use invoke to read the validationGestureBox value (threading problem...)
+                var validationVal = (int)0;
+                this.Invoke(new MethodInvoker(delegate() { validationVal = validatioGestureBox.SelectedIndex; }));
 
-
+                if ((Thalmic.Myo.Pose)validationVal != 0 && !validationGesture && (Thalmic.Myo.Pose)validationVal == e.Pose)
+                {
+                    validationGesture = true;
+                    logStatus("Validation gesture detected, ready to send key.");
+                    return;
+                }
                  /* To improve :
                   * 
                   * Create an enum with all the pose. When we click on a checkbox, we enable or disable the pose.
@@ -102,6 +110,8 @@ namespace myo_key_dot_net
                                  Debug.WriteLine(t);
                                  SendKeys.SendWait(t);
 
+                                 logStatus("Pose detected : " + e.Pose.ToString() + " | Send key : " + tmptb.Text);
+
                                  //Get all Combo box in the scene (get vibration type)
                                  var combo = GetAll(this, typeof(ComboBox));
                                  foreach (ComboBox tmpcombo in combo)
@@ -110,8 +120,12 @@ namespace myo_key_dot_net
                                      {
                                         //!\ Threading problems !
                                        var val = (int)3;
+                                         //use invoke to read the comboBox value
                                        this.Invoke(new MethodInvoker(delegate() { val = tmpcombo.SelectedIndex; }));
                                        this._myo.Vibrate((VibrationType)val);
+
+                                       //we reset the validation Gesture
+                                       validationGesture = false;
 
                                          return;
                                      }
