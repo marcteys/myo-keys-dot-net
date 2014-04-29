@@ -37,6 +37,7 @@ namespace myo_key_dot_net
 
         bool startSending = false;
         bool validationGesture = false;
+        int validationVal = 0;
 
         /* to do : declare array (checkbox, etc) here */
 
@@ -63,98 +64,105 @@ namespace myo_key_dot_net
         private void myo_PoseChanged(object sender, PoseEventArgs e)
         {
 
-
             if (e.Pose == Pose.None)
             {
-              
+
             }
-            else if (startSending)
+            else
             {
-
-                // Detect the pose for the first time there is a validation gesture
-                //Use invoke to read the validationGestureBox value (threading problem...)
-                var validationVal = (int)0;
-                this.Invoke(new MethodInvoker(delegate() { validationVal = validatioGestureBox.SelectedIndex; }));
-
-                if ((Thalmic.Myo.Pose)validationVal != 0 && !validationGesture && (Thalmic.Myo.Pose)validationVal == e.Pose)
+                //If the validation is not set AND the validation gesture is not "None" AND the validationVal equals the current pose
+                if(!validationGesture && (Thalmic.Myo.Pose)validationVal != 0 && (Thalmic.Myo.Pose)validationVal == e.Pose)
                 {
-                    validationGesture = true;
-                    logStatus("Validation gesture detected, ready to send key.");
-                    return;
+               
+                     validationGesture = true;
+                     logStatus("Validation gesture detected (" + e.Pose + "), ready to send key.");
+                     return;
+                    Debug.WriteLine("faaaalse");
                 }
 
+                //if the validation gesture is set OR the validation pose is None
+                if(validationGesture || (Thalmic.Myo.Pose)validationVal == 0)
+                {
 
-
-                 /* To improve :
-                  * 
-                  * Create an enum with all the pose. When we click on a checkbox, we enable or disable the pose.
-                  * All the data (key, vibration) are stored in an object. 
-                  * This code just detect if the pose is enabled and then plays it
-                  * All the variables are stored in the ENUMs. Verify proprely like this method
-                  * //if (e.Pose == Pose.FingersSpread)
-                  *     {
-                  *    this._myo.Vibrate(VibrationType.Medium);
-                  *  }
-                  * 
-                  * */
-
-                 // Get all CheckBox in the scene (get checked state)
-
-                 var cb = GetAll(this, typeof(CheckBox));
-                 foreach (CheckBox tmbcb in cb)
-                 {
-                     if (tmbcb.Checked && tmbcb.Tag.ToString() == e.Pose.ToString())
-                     {
-
-                         //Get all TextBox in the scene (get the key)
-                         var tb = GetAll(this, typeof(TextBox));
-                         foreach (TextBox tmptb in tb)
-                         {
-                             if (tmptb.Tag.ToString() == e.Pose.ToString())
-                             {
-                                 string t = "{" + tmptb.Text + "}";
-                                 if (tmptb.Text == string.Empty) t = "{ENTER}";
-
-                                // We can use both ...
-                                 SendKeys.SendWait(t);
-                                 //... or the method in a new invoke bellow
-                                 /*
-                                 this.Invoke(new MethodInvoker(delegate() {
-                                     SendKeys.Send(t);
-                                     logStatus("Pose detected : " + e.Pose.ToString() + " | Send key : " + tmptb.Text);
-                                 }));
-                                 */
-
-                                 //Get all Combo box in the scene (get vibration type)
-                                 var combo = GetAll(this, typeof(ComboBox));
-                                 foreach (ComboBox tmpcombo in combo)
-                                 {
-                                     if (tmpcombo.Tag.ToString() == e.Pose.ToString())
-                                     {
-                                        //!\ Threading problems !
-                                       var val = (int)3;
-                                         //use invoke to read the comboBox value
-                                       this.Invoke(new MethodInvoker(delegate() { val = tmpcombo.SelectedIndex; }));
-                                       this._myo.Vibrate((VibrationType)val);
-
-                                       //we reset the validation Gesture
-                                       validationGesture = false;
-
-                                         return;
-                                     }
-                                 }
-                                 return;
-                             }
-                         }
-                         return;
-                     } 
-                 }
-
+                     // Detect the pose for the first time there is a validation gesture
+                    //Use invoke to read the validationGestureBox value (threading problem...)
               
-            }
-        }
+                     /* To improve :
+                      * 
+                      * Create an enum with all the pose. When we click on a checkbox, we enable or disable the pose.
+                      * All the data (key, vibration) are stored in an object. 
+                      * This code just detect if the pose is enabled and then plays it
+                      * All the variables are stored in the ENUMs. Verify proprely like this method
+                      * //if (e.Pose == Pose.FingersSpread)
+                      *     {
+                      *    this._myo.Vibrate(VibrationType.Medium);
+                      *  }
+                      * 
+                      * */
 
-      
+                     // Get all CheckBox in the scene (get checked state)
+
+                     var cb = GetAll(this, typeof(CheckBox));
+                     foreach (CheckBox tmbcb in cb)
+                     {
+                         if (tmbcb.Checked && tmbcb.Tag.ToString() == e.Pose.ToString())
+                         {
+
+                             //Get all TextBox in the scene (get the key)
+                             var tb = GetAll(this, typeof(TextBox));
+                             foreach (TextBox tmptb in tb)
+                             {
+                                 if (tmptb.Tag.ToString() == e.Pose.ToString())
+                                 {
+                                     string t = "{" + tmptb.Text + "}";
+                                     if (tmptb.Text == string.Empty) t = "{ENTER}";
+
+                                          // We can use both ...
+                                     SendKeys.SendWait(t);
+                                          //... or the method in a new invoke bellow
+                                     /*
+                                     this.Invoke(new MethodInvoker(delegate() {
+                                         SendKeys.Send(t);
+                                     }));
+                                     */
+
+                                     //Reset the validation Gesture
+                                     validationGesture = false;
+                                 
+                                     logStatus("Pose detected : " + e.Pose.ToString() + " | Send key : " + tmptb.Text);
+
+                                     //Get all Combo box in the scene (get vibration type)
+                                     var combo = GetAll(this, typeof(ComboBox));
+                                     foreach (ComboBox tmpcombo in combo)
+                                     {
+                                         if (tmpcombo.Tag.ToString() == e.Pose.ToString())
+                                         {
+                                            //!\ Threading problems !
+                                           var val = (int)3;
+                                             //use invoke to read the comboBox value
+                                           this.Invoke(new MethodInvoker(delegate() { val = tmpcombo.SelectedIndex; }));
+                                           this._myo.Vibrate((VibrationType)val);
+
+
+
+                                            return;
+                                         }
+                                     }
+                                     return;
+                                 }
+                             }
+                             return;
+                         } 
+                     }
+                }
+                else if (!validationGesture)
+                {
+                    logStatus("Do the validation gesture first. (Detected " + e.Pose + ")");
+                }
+
+            }
+
+        }
 
       
         private void logStatus(string message)
@@ -310,9 +318,9 @@ namespace myo_key_dot_net
                                       .Where(c => c.GetType() == type);
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void validatioGestureBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+                validationVal = validatioGestureBox.SelectedIndex;
         }
 
     }

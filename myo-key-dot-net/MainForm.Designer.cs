@@ -353,7 +353,7 @@
             this.validatioGestureBox.Size = new System.Drawing.Size(140, 21);
             this.validatioGestureBox.TabIndex = 27;
             this.validatioGestureBox.Tag = "TwistIn";
-            this.validatioGestureBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.validatioGestureBox.SelectedIndexChanged += new System.EventHandler(this.validatioGestureBox_SelectedIndexChanged);
             // 
             // MainForm
             // 
