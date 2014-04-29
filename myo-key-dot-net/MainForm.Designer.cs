@@ -32,8 +32,6 @@
             this.logLabel = new System.Windows.Forms.Label();
             this.btnConnect = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.keyTwistIn = new System.Windows.Forms.TextBox();
             this.keyFingersSpread = new System.Windows.Forms.TextBox();
             this.keyWaveOut = new System.Windows.Forms.TextBox();
@@ -53,6 +51,8 @@
             this.poseWaveIn = new System.Windows.Forms.CheckBox();
             this.poseFist = new System.Windows.Forms.CheckBox();
             this.btnStart = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,41 +103,6 @@
             this.groupBox1.Size = new System.Drawing.Size(259, 184);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 161);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Validation gesture";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.comboBox1.DataSource = new Thalmic.Myo.Pose[] {
-        Thalmic.Myo.Pose.None,
-        Thalmic.Myo.Pose.Fist,
-        Thalmic.Myo.Pose.WaveIn,
-        Thalmic.Myo.Pose.WaveOut,
-        Thalmic.Myo.Pose.FingersSpread,
-        Thalmic.Myo.Pose.TwistIn};
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            Thalmic.Myo.Pose.None,
-            Thalmic.Myo.Pose.Fist,
-            Thalmic.Myo.Pose.WaveIn,
-            Thalmic.Myo.Pose.WaveOut,
-            Thalmic.Myo.Pose.FingersSpread,
-            Thalmic.Myo.Pose.TwistIn});
-            this.comboBox1.Location = new System.Drawing.Point(113, 156);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(140, 21);
-            this.comboBox1.TabIndex = 27;
-            this.comboBox1.Tag = "TwistIn";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // keyTwistIn
             // 
@@ -202,107 +167,67 @@
             // vibrationTwistIn
             // 
             this.vibrationTwistIn.Cursor = System.Windows.Forms.Cursors.Default;
-            this.vibrationTwistIn.DataSource = new Thalmic.Myo.VibrationType[] {
-        Thalmic.Myo.VibrationType.Short,
-        Thalmic.Myo.VibrationType.Medium,
-        Thalmic.Myo.VibrationType.Long,
-        Thalmic.Myo.VibrationType.None};
             this.vibrationTwistIn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.vibrationTwistIn.FormattingEnabled = true;
-            this.vibrationTwistIn.Items.AddRange(new object[] {
-            Thalmic.Myo.VibrationType.Short,
-            Thalmic.Myo.VibrationType.Medium,
-            Thalmic.Myo.VibrationType.Long,
-            Thalmic.Myo.VibrationType.None});
             this.vibrationTwistIn.Location = new System.Drawing.Point(186, 129);
             this.vibrationTwistIn.Name = "vibrationTwistIn";
             this.vibrationTwistIn.Size = new System.Drawing.Size(67, 21);
             this.vibrationTwistIn.TabIndex = 22;
             this.vibrationTwistIn.Tag = "TwistIn";
+            this.vibrationTwistIn.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
+
             // 
             // vibrationFingersSpread
             // 
             this.vibrationFingersSpread.Cursor = System.Windows.Forms.Cursors.Default;
-            this.vibrationFingersSpread.DataSource = new Thalmic.Myo.VibrationType[] {
-        Thalmic.Myo.VibrationType.Short,
-        Thalmic.Myo.VibrationType.Medium,
-        Thalmic.Myo.VibrationType.Long,
-        Thalmic.Myo.VibrationType.None};
             this.vibrationFingersSpread.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.vibrationFingersSpread.FormattingEnabled = true;
-            this.vibrationFingersSpread.Items.AddRange(new object[] {
-            Thalmic.Myo.VibrationType.Short,
-            Thalmic.Myo.VibrationType.Medium,
-            Thalmic.Myo.VibrationType.Long,
-            Thalmic.Myo.VibrationType.None});
             this.vibrationFingersSpread.Location = new System.Drawing.Point(186, 102);
             this.vibrationFingersSpread.Name = "vibrationFingersSpread";
             this.vibrationFingersSpread.Size = new System.Drawing.Size(67, 21);
             this.vibrationFingersSpread.TabIndex = 21;
             this.vibrationFingersSpread.Tag = "FingersSpread";
+            this.vibrationFingersSpread.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
+
             // 
             // vibrationWaveOut
             // 
             this.vibrationWaveOut.Cursor = System.Windows.Forms.Cursors.Default;
-            this.vibrationWaveOut.DataSource = new Thalmic.Myo.VibrationType[] {
-        Thalmic.Myo.VibrationType.Short,
-        Thalmic.Myo.VibrationType.Medium,
-        Thalmic.Myo.VibrationType.Long,
-        Thalmic.Myo.VibrationType.None};
             this.vibrationWaveOut.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.vibrationWaveOut.FormattingEnabled = true;
-            this.vibrationWaveOut.Items.AddRange(new object[] {
-            Thalmic.Myo.VibrationType.Short,
-            Thalmic.Myo.VibrationType.Medium,
-            Thalmic.Myo.VibrationType.Long,
-            Thalmic.Myo.VibrationType.None});
             this.vibrationWaveOut.Location = new System.Drawing.Point(186, 75);
             this.vibrationWaveOut.Name = "vibrationWaveOut";
             this.vibrationWaveOut.Size = new System.Drawing.Size(67, 21);
             this.vibrationWaveOut.TabIndex = 20;
             this.vibrationWaveOut.Tag = "WaveOut";
+            this.vibrationWaveOut.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
+
             // 
             // vibrationWaveIn
             // 
             this.vibrationWaveIn.Cursor = System.Windows.Forms.Cursors.Default;
-            this.vibrationWaveIn.DataSource = new Thalmic.Myo.VibrationType[] {
-        Thalmic.Myo.VibrationType.Short,
-        Thalmic.Myo.VibrationType.Medium,
-        Thalmic.Myo.VibrationType.Long,
-        Thalmic.Myo.VibrationType.None};
             this.vibrationWaveIn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.vibrationWaveIn.FormattingEnabled = true;
-            this.vibrationWaveIn.Items.AddRange(new object[] {
-            Thalmic.Myo.VibrationType.Short,
-            Thalmic.Myo.VibrationType.Medium,
-            Thalmic.Myo.VibrationType.Long,
-            Thalmic.Myo.VibrationType.None});
             this.vibrationWaveIn.Location = new System.Drawing.Point(186, 48);
             this.vibrationWaveIn.Name = "vibrationWaveIn";
             this.vibrationWaveIn.Size = new System.Drawing.Size(67, 21);
             this.vibrationWaveIn.TabIndex = 19;
             this.vibrationWaveIn.Tag = "WaveIn";
+            this.vibrationWaveIn.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
+
             // 
             // vibrationFist
             // 
             this.vibrationFist.Cursor = System.Windows.Forms.Cursors.Default;
-            this.vibrationFist.DataSource = new Thalmic.Myo.VibrationType[] {
-        Thalmic.Myo.VibrationType.Short,
-        Thalmic.Myo.VibrationType.Medium,
-        Thalmic.Myo.VibrationType.Long,
-        Thalmic.Myo.VibrationType.None};
             this.vibrationFist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.vibrationFist.FormattingEnabled = true;
-            this.vibrationFist.Items.AddRange(new object[] {
-            Thalmic.Myo.VibrationType.Short,
-            Thalmic.Myo.VibrationType.Medium,
-            Thalmic.Myo.VibrationType.Long,
-            Thalmic.Myo.VibrationType.None});
             this.vibrationFist.Location = new System.Drawing.Point(186, 21);
             this.vibrationFist.Name = "vibrationFist";
             this.vibrationFist.Size = new System.Drawing.Size(67, 21);
             this.vibrationFist.TabIndex = 18;
             this.vibrationFist.Tag = "Fist";
+            this.vibrationFist.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
+
             // 
             // label3
             // 
@@ -407,6 +332,28 @@
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.startSend);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 161);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Validation gesture";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.comboBox1.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.Pose));
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(113, 156);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(140, 21);
+            this.comboBox1.TabIndex = 27;
+            this.comboBox1.Tag = "TwistIn";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // MainForm
             // 
