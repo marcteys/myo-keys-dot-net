@@ -21,8 +21,8 @@ namespace myo_key_dot_net
     /* NEXT STUFF TO DO
      * 
      * Add the possibility of key combinaison (see e.KeyData)
+     * Use Input simulator ? http://inputsimulator.codeplex.com/
      * 
-     * Create a "validation gesture" to do before
      * 
      * 
      * */
@@ -77,6 +77,9 @@ namespace myo_key_dot_net
                     logStatus("Validation gesture detected, ready to send key.");
                     return;
                 }
+
+
+
                  /* To improve :
                   * 
                   * Create an enum with all the pose. When we click on a checkbox, we enable or disable the pose.
