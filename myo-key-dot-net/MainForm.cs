@@ -115,20 +115,16 @@ namespace myo_key_dot_net
                                  string t = "{" + tmptb.Text + "}";
                                  if (tmptb.Text == string.Empty) t = "{ENTER}";
 
-
-                                 Debug.WriteLine(t);
-                                 //SendKeys.Send(t);
-
+                                // We can use both ...
                                  SendKeys.SendWait(t);
-                                 Thread.Sleep(500);
-                                 logStatus("Pose detected : " + e.Pose.ToString() + " | Send key : " + tmptb.Text);
-
+                                 //... or the method in a new invoke bellow
                                  /*
                                  this.Invoke(new MethodInvoker(delegate() {
                                      SendKeys.Send(t);
                                      logStatus("Pose detected : " + e.Pose.ToString() + " | Send key : " + tmptb.Text);
                                  }));
                                  */
+
                                  //Get all Combo box in the scene (get vibration type)
                                  var combo = GetAll(this, typeof(ComboBox));
                                  foreach (ComboBox tmpcombo in combo)

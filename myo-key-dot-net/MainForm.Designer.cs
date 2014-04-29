@@ -62,7 +62,7 @@
             this.logLabel.Location = new System.Drawing.Point(7, 226);
             this.logLabel.Name = "logLabel";
             this.logLabel.Size = new System.Drawing.Size(95, 13);
-            this.logLabel.TabIndex = 1;
+            this.logLabel.TabIndex = 2;
             this.logLabel.Text = "Ready to connect.";
             this.logLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
