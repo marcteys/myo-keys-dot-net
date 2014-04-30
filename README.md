@@ -4,6 +4,7 @@ Myo Keys
 Myo keys allows you to simulate keys press.
 
 This program is super easy to use (user firendly!) and is usefull to remotly control the applications on **Windows**.
+![Myo Keys](https://pbs.twimg.com/media/Bma7OBwCQAAA7cs.jpg:large)
 
 ## How it works
 
