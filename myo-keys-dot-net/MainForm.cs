@@ -66,6 +66,13 @@ namespace myo_keys_dot_net
                 if (!validationGesture && (Thalmic.Myo.Pose)validationVal != 0 && (Thalmic.Myo.Pose)validationVal == e.Pose && startSending)
                 {
                      validationGesture = true;
+
+                
+                      var gestureVibrationVal = (int)3;
+                       //use invoke to read the comboBox value
+                      this.Invoke(new MethodInvoker(delegate() { gestureVibrationVal = vibrationValidation.SelectedIndex; }));
+                      this._myo.Vibrate((VibrationType)gestureVibrationVal);
+
                      logStatus("Validation gesture detected (" + e.Pose + "), ready to send key.");
                      return;
                 }
@@ -306,6 +313,32 @@ namespace myo_keys_dot_net
         {
                 validationVal = validatioGestureBox.SelectedIndex;
         }
+
+
+        void OnDisable()
+        {
+            Console.WriteLine("Uninitialize");
+            this._hub.Dispose();
+            //Uninitialize();
+            Application.Exit();
+
+        }
+
+        void OnApplicationQuit()
+        {
+            Console.WriteLine("Uninitialize");
+            this._hub.Dispose();
+            //Uninitialize();
+            Application.Exit();
+
+        }
+
+        private void Main_Closing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+ 
+
 
     }
 

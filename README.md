@@ -32,3 +32,7 @@ For this project I had to add a new VibrationType (None) to the *enum* of the my
 * Complete the readme
 * Best practices / functions to optimize the come
 * Disable the vibration field at the begenning and enable it later. (or set default to none)
+* Disconnect the Myo on application quit
+
+### Updates
+* Added haptic feedback for the validation gesture

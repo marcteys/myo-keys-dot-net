@@ -42,6 +42,7 @@
             this.vibrationWaveOut = new System.Windows.Forms.ComboBox();
             this.vibrationWaveIn = new System.Windows.Forms.ComboBox();
             this.vibrationFist = new System.Windows.Forms.ComboBox();
+            this.vibrationValidation = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -90,6 +91,7 @@
             this.groupBox1.Controls.Add(this.vibrationWaveOut);
             this.groupBox1.Controls.Add(this.vibrationWaveIn);
             this.groupBox1.Controls.Add(this.vibrationFist);
+            this.groupBox1.Controls.Add(this.vibrationValidation);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -234,6 +236,20 @@
             this.vibrationFist.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
 
             // 
+            // vibrationValidation
+            // 
+            this.vibrationValidation.Cursor = System.Windows.Forms.Cursors.Default;
+            this.vibrationValidation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.vibrationValidation.FormattingEnabled = false;//
+            this.vibrationValidation.Location = new System.Drawing.Point(186, 156);
+            this.vibrationValidation.Name = "vibrationValidation";
+            this.vibrationValidation.Size = new System.Drawing.Size(67, 21);
+            this.vibrationValidation.TabIndex = 19;
+            this.vibrationValidation.Tag = "Validation";
+            //this.vibrationValidation.Enabled = false;
+            this.vibrationValidation.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.VibrationType));
+
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -347,7 +363,7 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Validation gesture";
             // 
-            // comboBox1
+            // validationGestureBox
             // 
             this.validatioGestureBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.validatioGestureBox.DataSource = System.Enum.GetValues(typeof(Thalmic.Myo.Pose));
@@ -355,9 +371,9 @@
             this.validatioGestureBox.FormattingEnabled = true;
             this.validatioGestureBox.Location = new System.Drawing.Point(113, 156);
             this.validatioGestureBox.Name = "validatioGestureBox";
-            this.validatioGestureBox.Size = new System.Drawing.Size(140, 21);
+            this.validatioGestureBox.Size = new System.Drawing.Size(67, 21);
             this.validatioGestureBox.TabIndex = 27;
-            //this.validatioGestureBox.Tag = "TwistIn";
+            this.validatioGestureBox.Tag = "ValidationGestureBox";
             this.validatioGestureBox.SelectedIndexChanged += new System.EventHandler(this.validatioGestureBox_SelectedIndexChanged);
             // 
             // MainForm
@@ -372,11 +388,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Myo Keys";
-            this.MaximumSize = this.MinimumSize = this.Size;
+            //this.MaximumSize = this.MinimumSize = this.Size;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Closing);
 
         }
 
@@ -399,6 +416,7 @@
         private System.Windows.Forms.ComboBox vibrationFingersSpread;
         private System.Windows.Forms.ComboBox vibrationWaveOut;
         private System.Windows.Forms.ComboBox vibrationWaveIn;
+        private System.Windows.Forms.ComboBox vibrationValidation;
         private System.Windows.Forms.TextBox keyTwistIn;
         private System.Windows.Forms.TextBox keyFingersSpread;
         private System.Windows.Forms.TextBox keyWaveOut;
