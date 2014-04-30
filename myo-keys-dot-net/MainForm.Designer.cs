@@ -52,6 +52,7 @@
             this.poseWaveIn = new System.Windows.Forms.CheckBox();
             this.poseFist = new System.Windows.Forms.CheckBox();
             this.btnStart = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.validatioGestureBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
@@ -66,16 +67,6 @@
             this.logLabel.TabIndex = 2;
             this.logLabel.Text = "Ready to connect.";
             this.logLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnConnect
-            // 
-            this.btnConnect.Location = new System.Drawing.Point(161, 202);
-            this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(110, 23);
-            this.btnConnect.TabIndex = 0;
-            this.btnConnect.Text = "Connect Myo";
-            this.btnConnect.UseVisualStyleBackColor = true;
-            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
             // groupBox1
             // 
@@ -343,21 +334,42 @@
             this.poseFist.UseVisualStyleBackColor = true;
             this.poseFist.CheckedChanged += new System.EventHandler(this.checkKeyValue);
             // 
+            // btnConnect
+            // 
+            this.btnConnect.Location = new System.Drawing.Point(10, 202);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(110, 23);
+            this.btnConnect.TabIndex = 0;
+            this.btnConnect.Text = "Connect Myo";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
             // btnStart
             // 
             this.btnStart.Enabled = false;
-            this.btnStart.Location = new System.Drawing.Point(80, 202);
+            this.btnStart.Location = new System.Drawing.Point(123, 202);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(75, 23);
+            this.btnStart.Size = new System.Drawing.Size(73, 23);
             this.btnStart.TabIndex = 1;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.startSend);
             // 
+            // btnExit
+            // 
+            this.btnExit.Enabled = true;
+            this.btnExit.Location = new System.Drawing.Point(200, 202);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(72, 23);
+            this.btnExit.TabIndex = 1;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.ExitApp);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 161);
+            this.label4.Location = new System.Drawing.Point(8, 161);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 13);
             this.label4.TabIndex = 7;
@@ -375,7 +387,8 @@
             this.validatioGestureBox.TabIndex = 27;
             this.validatioGestureBox.Tag = "ValidationGestureBox";
             this.validatioGestureBox.SelectionChangeCommitted += new System.EventHandler(this.validatioGestureBox_SelectedIndexChanged);
-            this.validatioGestureBox.SelectedValueChanged += new System.EventHandler(this.validatioGestureBox_SelectedIndexChanged);
+            //this.validatioGestureBox.SelectedValueChanged += new System.EventHandler(this.validatioGestureBox_SelectedIndexChanged);
+            //this.validatioGestureBox.TextChanged += new System.EventHandler(this.validatioGestureBox_TextChanged);
             // 
             // MainForm
             // 
@@ -386,6 +399,7 @@
             this.Controls.Add(this.logLabel);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.btnStart);
+            this.Controls.Add(this.btnExit);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Myo Keys";
@@ -423,6 +437,7 @@
         private System.Windows.Forms.TextBox keyWaveOut;
         private System.Windows.Forms.TextBox keyWaveIn;
         private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox validatioGestureBox;
     }

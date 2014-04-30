@@ -72,7 +72,6 @@ namespace myo_keys_dot_net
                 if (!validationGesture && (Thalmic.Myo.Pose)validationVal != 0 && (Thalmic.Myo.Pose)validationVal == e.Pose && startSending)
                 {
                      validationGesture = true;
-
                 
                       var gestureVibrationVal = (int)3;
                        //use invoke to read the comboBox value
@@ -317,7 +316,7 @@ namespace myo_keys_dot_net
 
         private void validatioGestureBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Debug.WriteLine("here");
+            Debug.WriteLine("IndexChanged");
             validationVal = validatioGestureBox.SelectedIndex;
             validationGesture = false;
             logStatus("New Validation gesture : " + (Thalmic.Myo.Pose)validationVal );
@@ -329,6 +328,11 @@ namespace myo_keys_dot_net
             Process currentProcess = Process.GetCurrentProcess();
             currentProcess.Kill();
             // Environment.Exit(0);
+        }
+
+        private void ExitApp(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
         
 
