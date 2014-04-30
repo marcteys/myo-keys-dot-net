@@ -39,14 +39,9 @@ namespace myo_keys_dot_net
         public MainForm()
         {
             InitializeComponent();
-          //  Application.ApplicationExit += Application_ApplicationExit;
-
+          
         }
-        static void Application_ApplicationExit(object sender, EventArgs e)
-        {
-            Debug.WriteLine("lol");
-            Process.GetCurrentProcess().Kill();
-        }
+ 
         private void hub_MyoPaired(object sender, MyoEventArgs e)
         {
             if (this._myo == null)
@@ -184,6 +179,7 @@ namespace myo_keys_dot_net
                 this._hub = new Hub();
                 logStatus("Ready");
                 btnStart.Enabled = true;
+                ActiveControl = btnStart;
             }
             catch { }
 
@@ -237,7 +233,6 @@ namespace myo_keys_dot_net
                 }
             }
 
-
         }
 
         private void assignKey(object sender, PreviewKeyDownEventArgs e)
@@ -251,7 +246,6 @@ namespace myo_keys_dot_net
             logStatus("Set a new key : " +e.KeyCode.ToString());
         }
 
-       
      
         private void textBox_Clear(object sender, EventArgs e)
         {
@@ -325,8 +319,7 @@ namespace myo_keys_dot_net
         private void Main_Closing(object sender, FormClosingEventArgs e)
         {
             //two methods : Kill current process or  Environment.Exit(0);
-            Process currentProcess = Process.GetCurrentProcess();
-            currentProcess.Kill();
+            Process.GetCurrentProcess().Kill();;
             // Environment.Exit(0);
         }
 

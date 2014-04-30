@@ -64,7 +64,7 @@
             this.logLabel.Location = new System.Drawing.Point(7, 226);
             this.logLabel.Name = "logLabel";
             this.logLabel.Size = new System.Drawing.Size(95, 13);
-            this.logLabel.TabIndex = 2;
+            this.logLabel.TabIndex = 3;
             this.logLabel.Text = "Ready to connect.";
             this.logLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -361,7 +361,7 @@
             this.btnExit.Location = new System.Drawing.Point(200, 202);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(72, 23);
-            this.btnExit.TabIndex = 1;
+            this.btnExit.TabIndex = 2;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.ExitApp);
