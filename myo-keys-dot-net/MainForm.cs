@@ -39,8 +39,14 @@ namespace myo_keys_dot_net
         public MainForm()
         {
             InitializeComponent();
-        }
+          //  Application.ApplicationExit += Application_ApplicationExit;
 
+        }
+        static void Application_ApplicationExit(object sender, EventArgs e)
+        {
+            Debug.WriteLine("lol");
+            Process.GetCurrentProcess().Kill();
+        }
         private void hub_MyoPaired(object sender, MyoEventArgs e)
         {
             if (this._myo == null)
@@ -317,31 +323,14 @@ namespace myo_keys_dot_net
             logStatus("New Validation gesture : " + (Thalmic.Myo.Pose)validationVal );
         }
 
-
-        void OnDisable()
-        {
-            Console.WriteLine("Uninitialize");
-            this._hub.Dispose();
-            //Uninitialize();
-            Application.Exit();
-
-        }
-
-        void OnApplicationQuit()
-        {
-            Console.WriteLine("Uninitialize");
-            this._hub.Dispose();
-            //Uninitialize();
-            Application.Exit();
-
-        }
-
         private void Main_Closing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            //two methods : Kill current process or  Environment.Exit(0);
+            Process currentProcess = Process.GetCurrentProcess();
+            currentProcess.Kill();
+            // Environment.Exit(0);
         }
- 
-
+        
 
     }
 

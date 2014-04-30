@@ -18,5 +18,6 @@ namespace myo_keys_dot_net
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
         }
+        
     }
 }
