@@ -26,6 +26,7 @@ For this project I had to add a new VibrationType (None) to the *enum* of the my
 
 ###Know issues
 * Some keys may not work (I didn't manually add them)
+* Bug ? The validation gesture cannot be set back to None
 
 ###To do
 * Find a new method to deteck multiple keys shortcuts, case, etc...

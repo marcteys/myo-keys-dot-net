@@ -311,7 +311,10 @@ namespace myo_keys_dot_net
 
         private void validatioGestureBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-                validationVal = validatioGestureBox.SelectedIndex;
+            Debug.WriteLine("here");
+            validationVal = validatioGestureBox.SelectedIndex;
+            validationGesture = false;
+            logStatus("New Validation gesture : " + (Thalmic.Myo.Pose)validationVal );
         }
 
 

@@ -374,7 +374,8 @@
             this.validatioGestureBox.Size = new System.Drawing.Size(67, 21);
             this.validatioGestureBox.TabIndex = 27;
             this.validatioGestureBox.Tag = "ValidationGestureBox";
-            this.validatioGestureBox.SelectedIndexChanged += new System.EventHandler(this.validatioGestureBox_SelectedIndexChanged);
+            this.validatioGestureBox.SelectionChangeCommitted += new System.EventHandler(this.validatioGestureBox_SelectedIndexChanged);
+            this.validatioGestureBox.SelectedValueChanged += new System.EventHandler(this.validatioGestureBox_SelectedIndexChanged);
             // 
             // MainForm
             // 
