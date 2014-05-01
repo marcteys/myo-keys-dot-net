@@ -113,6 +113,7 @@ namespace myo_keys_dot_net
                                  {
                                      string t = "{" + tmptb.Text + "}";
                                      if (tmptb.Text == string.Empty) t = "{ENTER}";
+                                     if (tmptb.Text == " ") t = " ";
 
                                      try {
                                          SendKeys.SendWait(t);
@@ -256,26 +257,50 @@ namespace myo_keys_dot_net
             if (k.Length > 1)
             {
                 k = k.ToUpper();
+                if (k == "BACK")
+                {
+                    k = "BACKSPACE";
+                }
+                else if (k == "RETURN")
+                {
+                    k = "ENTER";
+                }
+                else if (k == "CAPITAL")
+                {
+                    k = "CAPSLOCK";
+                }
+                else if (k == "SPACE")
+                {
+                    k = " ";
+                }
+                else if (k == "CONTROLKEY")
+                {
+                    k = "^";
+                }
+                else if (k == "SHIFTKEY")
+                {
+                    k = "+";
+                }
+                else if (k == "MENU")
+                {
+                    k = "%";
+                }
+                else if (k == "PAGEUP")
+                {
+                    k = "PGUP";
+                }
+                else if (k == "PAGEDOWN")
+                {
+                    k = "PDDW";
+                }
+                else if (k == "ESCAPE")
+                {
+                    k = "ESC";
+                }
             }
             else
             {
                 k = k.ToLower();
-            }
-            if (k == "BACK")
-            {
-                k = "BACKSPACE";
-            }
-            else if (k == "RETURN")
-            {
-                k = "ENTER";
-            }
-            else if (k == "CAPITAL")
-            {
-                k = "CAPSLOCK";
-            }
-            else if (k == "SPACE")
-            {
-                k = "SPACE";
             }
 
             return k;
