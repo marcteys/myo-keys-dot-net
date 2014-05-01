@@ -114,19 +114,17 @@ namespace myo_keys_dot_net
                                      string t = "{" + tmptb.Text + "}";
                                      if (tmptb.Text == string.Empty) t = "{ENTER}";
 
-                                          // We can use both ...
-                                     SendKeys.SendWait(t);
-                                          //... or the method in a new invoke bellow
-                                     /*
-                                     this.Invoke(new MethodInvoker(delegate() {
-                                         SendKeys.Send(t);
-                                     }));
-                                     */
+                                     try {
+                                         SendKeys.SendWait(t);
+                                         logStatus("Pose detected : " + e.Pose.ToString() + " | Send key : " + tmptb.Text);
+
+                                     } catch (Exception ex){
+                                         logStatus("Error : Keycode not detected");
+                                         return;
+                                     }
 
                                      //Reset the validation Gesture
                                      validationGesture = false;
-                                 
-                                     logStatus("Pose detected : " + e.Pose.ToString() + " | Send key : " + tmptb.Text);
 
                                      //Get all Combo box in the scene (get vibration type)
                                      var combo = GetAll(this, typeof(ComboBox));
@@ -277,7 +275,7 @@ namespace myo_keys_dot_net
             }
             else if (k == "SPACE")
             {
-                k = " ";
+                k = "SPACE";
             }
 
             return k;
